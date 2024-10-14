@@ -36,7 +36,8 @@ Before you begin, ensure you have the following installed:
 1. **Clone the Repository** :
 
    ```bash
-   git clone 
+   git clone "https://github.com/LakshayxBansal/Attyre-trial.git"
+   cd Attyre-trial
 
 
 2. **Install Dependencies** :
