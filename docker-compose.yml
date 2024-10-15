@@ -6,7 +6,7 @@ services:
     ports:
       - '3000:3000'
     environment:
-      MONGO_URI: mongodb+srv://passisadmin123:admin123@cluster0.iil4k.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+      MONGO_URI: "" #Add your db URI here
       REDIS_HOST: redis
       PORT: 3000
     depends_on:
@@ -14,7 +14,7 @@ services:
       - redis
 
   mongo:
-    image: mongo  # Changed from mongo:alpine to mongo
+    image: mongo 
     ports:
       - '27017:27017'
     volumes:

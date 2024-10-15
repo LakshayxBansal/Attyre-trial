@@ -49,17 +49,21 @@ Before you begin, ensure you have the following installed:
     PORT=3000
 
 ## Setup Using Docker
-3. **Docker build** :
+3. **Docker Compose Setup**
+    Add mongodb uri in docker-compose.yml file 
+
+
+4. **Docker build** :
     ```bash 
     docker-compose up --build
 
 
-4. **Access the API** :
+5. **Access the API** :
     ```bash 
     http://localhost:3000/api/v1/products
 
 
-5. **Stop the Services**
+6. **Stop the Services**
     ```bash
     docker-compose down
 
