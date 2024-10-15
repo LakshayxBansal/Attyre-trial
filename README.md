@@ -50,6 +50,7 @@ Before you begin, ensure you have the following installed:
 
 ## Setup Using Docker
 3. **Docker Compose Setup**
+    ```bash
     Add mongodb uri in docker-compose.yml file 
 
 
