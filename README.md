@@ -9,6 +9,7 @@ The Video API is a RESTful API built using Node.js , Redis and Express. It allow
 - **User Management**: Create, read, update, and delete users.
 - **Product Management**: Create, read, update, and delete products.
 - **Video Management**: Create, read, update, and delete videos.
+- **Stateless API**: Each request is independent.
 - **Caching**: Responses are cached using Redis for faster access.
 - **Error Handling**: Global error handling middleware for consistent error responses.
 - **Logging**: Logging of incoming requests for monitoring.
@@ -21,6 +22,7 @@ The Video API is a RESTful API built using Node.js , Redis and Express. It allow
 - **Redis**: In-memory data structure store used for caching.
 - **Docker**: Used to run Redis.
 - **dotenv**: For managing environment variables.
+- **zod**: For validation.
 
 ## Prerequisites
 
@@ -63,22 +65,30 @@ Before you begin, ensure you have the following installed:
 ## API Endpoints
 
 1. **User Endpoints**
-    Create User: POST /api/users
-    Get All Users: GET /api/users
-    Get User by ID: GET /api/users/:id
-    Update User by ID: PUT /api/users/:id
-    Delete User by ID: DELETE /api/users/:id
+    Create User: POST /api/v1/users
+    Get All Users: GET /api/v1/users
+    Get User by ID: GET /api/v1/users/:id
+    Update User by ID: PUT /api/v1/users/:id
+    Delete User by ID: DELETE /api/v1/users/:id
 
 2. **Product Endpoints**
-    Create Product: POST /api/products
-    Get All Products: GET /api/products
-    Get Product by ID: GET /api/products/:id
-    Update Product by ID: PUT /api/products/:id
-    Delete Product by ID: DELETE /api/products/:id
+    Create Product: POST /api/v1/products
+    Get All Products: GET /api/v1/products
+    Get Product by ID: GET /api/v1/products/:id
+    Update Product by ID: PUT /api/v1/products/:id
+    Delete Product by ID: DELETE /api/v1/products/:id
 
 3. **Video Endpoints**
-    Create Video: POST /api/videos
-    Get All Videos: GET /api/videos
-    Get Video by ID: GET /api/videos/:id
-    Update Video by ID: PUT /api/videos/:id
-    Delete Video by ID: DELETE /api/videos/:id
+    Create Video: POST /api/v1/videos
+    Get All Videos: GET /api/v1/videos
+    Get Video by ID: GET /api/v1/videos/:id
+    Update Video by ID: PUT /api/v1/videos/:id
+    Delete Video by ID: DELETE /api/v1/videos/:id
+
+
+## Additional Features 
+1. Database connection pooling 
+2. Horizontal scaling with ASGs
+3. Load balancer
+4. API Gateway
+5. Monitoring and Logging

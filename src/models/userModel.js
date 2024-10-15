@@ -12,8 +12,7 @@ export const userZodSchema = z.object({
     profile_picture: z.string().optional(),
     bio: z.string().optional(),
     followers_count: z.number()
-        .default(0)
-        .nonnegative("Followers count cannot be negative"),
+        .default(0),
     verified: z.boolean()
         .default(false),
 });

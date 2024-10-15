@@ -1,3 +1,4 @@
+// src/models/productModel.js
 import mongoose from 'mongoose';
 import { z } from 'zod';
 
@@ -7,13 +8,11 @@ const variantSchema = new mongoose.Schema({
     options: [String],
 });
 
-
 const storeSchema = new mongoose.Schema({
     id: Number,
     name: String,
     logo: String,
 });
-
 
 const productSchema = new mongoose.Schema({
     name: { type: String, required: true },
@@ -26,7 +25,6 @@ const productSchema = new mongoose.Schema({
     variants: [variantSchema],
     store: storeSchema,
 }, { timestamps: true });
-
 
 const variantZodSchema = z.object({
     id: z.number().optional(),
@@ -54,5 +52,4 @@ const productZodSchema = z.object({
 
 const Product = mongoose.model('Product', productSchema);
 
-
-export { Product, productZodSchema };
+export { Product, productZodSchema }; 

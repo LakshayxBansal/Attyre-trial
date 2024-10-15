@@ -1,4 +1,5 @@
-import Product, { productValidationSchema } from '../models/productModel.js';
+// src/controllers/productController.js
+import { Product, productZodSchema } from '../models/productModel.js'; // Correctly importing
 import { redisClient } from '../config/redis.js';
 
 export const getAllProducts = async (req, res) => {
@@ -46,7 +47,7 @@ export const getProductById = async (req, res) => {
 
 export const createProduct = async (req, res) => {
     try {
-        const validationResult = productValidationSchema.safeParse(req.body);
+        const validationResult = productZodSchema.safeParse(req.body); // Use productZodSchema for validation
         if (!validationResult.success) {
             return res.status(400).json({ message: 'Validation error', errors: validationResult.error.errors });
         }
@@ -65,7 +66,7 @@ export const updateProduct = async (req, res) => {
     try {
         const { id } = req.params;
 
-        const validationResult = productValidationSchema.safeParse(req.body);
+        const validationResult = productZodSchema.safeParse(req.body); // Use productZodSchema for validation
         if (!validationResult.success) {
             return res.status(400).json({ message: 'Validation error', errors: validationResult.error.errors });
         }
