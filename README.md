@@ -10,9 +10,11 @@ The Video API is a RESTful API built using Node.js , Redis and Express. It allow
 - **Product Management**: Create, read, update, and delete products.
 - **Video Management**: Create, read, update, and delete videos.
 - **Stateless API**: Each request is independent.
+- **Versioning**: Added versions to each API
 - **Caching**: Responses are cached using Redis for faster access.
 - **Error Handling**: Global error handling middleware for consistent error responses.
 - **Logging**: Logging of incoming requests for monitoring.
+- **Containerized**: Can be easily controlled with container orchestration tools.
 
 ## Technologies Used
 
@@ -42,24 +44,40 @@ Before you begin, ensure you have the following installed:
    cd Attyre-trial
 
 
-2. **Install Dependencies** :
+2. **Set Up Environment Variables** :
+    MONGO_URI= ""
+    PORT=3000
+
+## Setup Using Docker
+3. **Docker build** :
+    ```bash 
+    docker-compose up --build
+
+
+4. **Access the API** :
+    ```bash 
+    http://localhost:3000/api/v1/products
+
+
+5. **Stop the Services**
+    ```bash
+    docker-compose down
+
+## Manual setup
+
+3. **Install Dependencies** :
     ```bash
     npm install
 
-
-3. **Set Up Environment Variables** :
-    MONGO_URI= ""
-    PORT=3000
-    REDIS_PORT=6379
-
-
 4. **Run Redis in Docker** :
+    
     ```bash 
     docker run --name redis -p 6379:6379 -d redis
 
 5. **Start the Server** :
     ```bash 
     npm run start
+
 
 
 ## API Endpoints

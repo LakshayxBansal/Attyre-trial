@@ -1,20 +1,20 @@
-# Use the official Node.js 18-alpine image as the base image
+# Use the official Node.js image (Alpine version)
 FROM node:18-alpine
 
-# Set the working directory inside the container
-WORKDIR /app
+# Set the working directory
+WORKDIR /usr/src/app
 
-# Copy the package.json and package-lock.json files
+# Copy package.json and package-lock.json
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install --production
+RUN npm install
 
-# Copy the rest of the application code to the container
+# Copy the rest of the application code
 COPY . .
 
-# Expose the port your API runs on (e.g., 3000)
+# Expose the application port
 EXPOSE 3000
 
-# Define the command to start the application
-CMD ["npm", "start"]
+# Command to run the application
+CMD ["npm", "run", "start"]

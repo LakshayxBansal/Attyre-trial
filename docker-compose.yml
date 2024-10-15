@@ -1,42 +1,29 @@
-version: '3'
 services:
-  api:
-    build: .
-    container_name: node_api
-    restart: always
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
-      - "3000:3000"
+      - '3000:3000'
+    environment:
+      MONGO_URI: mongodb+srv://passisadmin123:admin123@cluster0.iil4k.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+      REDIS_HOST: redis
+      PORT: 3000
     depends_on:
       - mongo
       - redis
-    env_file:
-      - .env
-    networks:
-      - app-network
 
   mongo:
-    image: mongo:6.0.4-focal
-    container_name: mongo_db
-    restart: always
+    image: mongo  # Changed from mongo:alpine to mongo
     ports:
-      - "27017:27017"
+      - '27017:27017'
     volumes:
-      - mongo-data:/data/db
-    networks:
-      - app-network
+      - mongo_data:/data/db
 
   redis:
-    image: redis:7-alpine
-    container_name: redis_cache
-    restart: always
+    image: redis:alpine
     ports:
-      - "6379:6379"
-    networks:
-      - app-network
+      - '6379:6379'
 
 volumes:
-  mongo-data:
-
-networks:
-  app-network:
-    driver: bridge
+  mongo_data:
