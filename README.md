@@ -90,37 +90,26 @@ Before you begin, ensure you have the following installed:
 1. **User Endpoints**
     ```bash 
     Create User: POST /api/v1/users
-    ```bash 
     Get All Users: GET /api/v1/users
-    ```bash 
     Get User by ID: GET /api/v1/users/:id
-    ```bash 
     Update User by ID: PUT /api/v1/users/:id
-    ```bash 
     Delete User by ID: DELETE /api/v1/users/:id
 
 2. **Product Endpoints**
+
     ```bash 
     Create Product: POST /api/v1/products
-    ```bash 
     Get All Products: GET /api/v1/products
-    ```bash 
     Get Product by ID: GET /api/v1/products/:id
-    ```bash 
     Update Product by ID: PUT /api/v1/products/:id
-    ```bash 
     Delete Product by ID: DELETE /api/v1/products/:id
 
 3. **Video Endpoints**
     ```bash 
     Create Video: POST /api/v1/videos
-    ```bash 
     Get All Videos: GET /api/v1/videos
-    ```bash 
     Get Video by ID: GET /api/v1/videos/:id
-    ```bash 
     Update Video by ID: PUT /api/v1/videos/:id
-    ```bash 
     Delete Video by ID: DELETE /api/v1/videos/:id
 
 
